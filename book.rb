@@ -13,14 +13,15 @@ else
 
   days = gets.chomp.to_i
 
-  daily_pages = (total_pages / days).to_i
+  daily_pages = (total_pages / days)
+  scheduled_reading = (first_page + daily_pages)
+  remaining_pages = total_pages - daily_pages
 
   puts "Here's your reading schedule:"
 
-  scheduled_reading = (first_page + daily_pages)
-
-  while scheduled_reading < total_pages do
+  until remaining_pages < daily_pages do
     puts "Read to page #{scheduled_reading}"
+    remaining_pages -= daily_pages
     scheduled_reading += daily_pages
   end
   puts "Finish the book."
