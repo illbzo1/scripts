@@ -12,7 +12,6 @@ else
   puts "How many days will the book take you to read?"
 
   days = gets.chomp.to_i
-  days = days.to_i
 
   daily_pages = (total_pages / days).to_i
 
